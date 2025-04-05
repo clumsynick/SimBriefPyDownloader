@@ -1,0 +1,18 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Config files
+*.json
+
+# AppImage build folders
+AppDir/
+*.AppImage
+
+# Pip cache
+pip-wheel-metadata/
+*.dist-info/
+
+# Misc
+*.log
