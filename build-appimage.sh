@@ -14,14 +14,14 @@ mkdir -p AppDir/usr/lib/python3.11/site-packages
 mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
 
 # Copy your Python script
-# cp SimBriefPyDownloader.py AppDir/usr/bin/simbrief_downloader.py
+cp SimBriefPyDownloader.py AppDir/usr/bin/simbrief_downloader.py
 
 # Copy desktop entry and icon
-# cp simbrief.desktop AppDir/
+cp simbrief.desktop AppDir/
 cp AppDir/simbrief.png AppDir/usr/share/icons/hicolor/256x256/apps/
 
 # Install Python dependencies into AppDir
-# pip install --target=AppDir/usr/lib/python3.11/site-packages/ requests
+pip install --target=AppDir/usr/lib/python3.11/site-packages/ requests
 
 # Make Python script executable
 chmod +x AppDir/usr/bin/simbrief_downloader.py
