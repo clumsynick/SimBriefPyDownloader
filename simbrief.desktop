@@ -1,7 +1,8 @@
 [Desktop Entry]
 Name=SimBriefPyDownloader
 Comment=Download and manage SimBrief flightplans
-Exec=simbrief_downloader.py
+Exec=usr/bin/simbrief_downloader.py
+# Exec=simbrief_downloader.py
 Icon=simbrief
 Type=Application
 Categories=Utility;

@@ -15,10 +15,15 @@ mkdir -p AppDir/usr/share/icons/hicolor/256x256/apps
 
 # Copy your Python script
 cp SimBriefPyDownloader.py AppDir/usr/bin/simbrief_downloader.py
+cp SimBriefPyDownloader.py AppDir
 
 # Copy desktop entry and icon
 cp simbrief.desktop AppDir/
-cp AppDir/simbrief.png AppDir/usr/share/icons/hicolor/256x256/apps/
+cp simbrief.png AppDir/usr/share/icons/hicolor/256x256/apps/
+cp simbrief.png AppDir/
+
+# Copy AppRun
+cp AppRun AppDir/
 
 # Install Python dependencies into AppDir
 pip install --target=AppDir/usr/lib/python3.11/site-packages/ requests
@@ -27,7 +32,8 @@ pip install --target=AppDir/usr/lib/python3.11/site-packages/ requests
 chmod +x AppDir/usr/bin/simbrief_downloader.py
 
 # Make AppImage
+# IMPORTANT: Change path to appimagetool
 echo "🔧 Creating AppImage..."
-~/Applications/appimagetool-i686.AppImage AppDir "${APP}-${VERSION}.AppImage"
+ARCH=x86_64 ~/Applications/appimagetool-i686.AppImage AppDir "${APP}-${VERSION}.AppImage"
 
 echo "✅ AppImage created: ${APP}-${VERSION}.AppImage"
