@@ -4,7 +4,7 @@
 set -e
 
 APP=SimBriefPyDownloader
-VERSION="1.0.0"
+VERSION="1.0.1"
 
 echo "🚀 Building AppImage for $APP v$VERSION"
 
