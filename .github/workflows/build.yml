@@ -1,0 +1,30 @@
+name: Build Linux Binary
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-tk
+          pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: |
+          pyinstaller --onefile --windowed SimBriefPyDownloader.py
+
+      - name: Upload Binary
+        uses: actions/upload-artifact@v4
+        with:
+          name: SimBriefPyDownloader-Linux
+          path: dist/SimBriefPyDownloader
